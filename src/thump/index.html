@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thump!</title>
+    <script src="/shared/ruffle/ruffle.js"></script>
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.RufflePlayer.config = {
+            "autoplay": "auto",
+            "splashScreen": false,
+            "scale": "noborder"
+        };
+        window.addEventListener("load", (event) => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            const container = document.getElementById("container");
+            container.appendChild(player);
+            player.load("./thump.swf");
+        });
+    </script>
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            background-color: #675200;
+        }
+        ruffle-player {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" style="width:1050px;height:600px;"></div>
+</body>
+</html>
